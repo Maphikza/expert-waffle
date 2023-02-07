@@ -1,6 +1,8 @@
 use std::io;
 
 fn main() {
+    const NAME: &str = "Siphiwe";
+    println!("Welcome to {}'s tests.", NAME);
     let name = get_name("What's your name");
     let prof = get_name("Who is your professor?");
 
@@ -12,7 +14,13 @@ fn main() {
     let x = get_int("x ");
     let y = get_int("y ");
     let answer = x + y;
-    println!("{} + {} = {}", x, y, answer)
+    println!("{} + {} = {}", x, y, answer);
+
+    if answer % 2 == 0 {
+        println!("{}  is even.", answer);
+    } else {
+        println!("{} is odd.", answer);
+    }
 }
 
 fn get_name(string:&str) -> String {
@@ -30,7 +38,7 @@ fn get_name(string:&str) -> String {
     name
 }
 
-fn get_int(string:&str) -> i8 {
+fn get_int(string:&str) -> usize {
     println!("{}:", string.to_string());
 
     let mut num = String::new();
@@ -39,7 +47,7 @@ fn get_int(string:&str) -> i8 {
         .read_line(&mut num)
         .expect("No Data Found.");
     
-    let int_num: i8 = num.trim().parse().expect("No Data input.");
+    let int_num: usize = num.trim().parse().expect("No Data input.");
 
     int_num
 }
