@@ -31,7 +31,7 @@ fn get_name(string:&str) -> String {
 
     io::stdin()
         .read_line(&mut name)
-        .expect("No Data Found.");
+        .expect("Data must be a string.");
     
     let name: String = name.trim().parse().expect("No Data input.");
 
@@ -45,7 +45,7 @@ fn get_int(string:&str) -> usize {
 
     io::stdin()
         .read_line(&mut num)
-        .expect("No Data Found.");
+        .expect("Data must be a string.");
     
     let int_num: usize = num.trim().parse().expect("No Data input.");
 
